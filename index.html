@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,17 +22,87 @@
             content-visibility: auto;
           }
         }
-        
+        body{
+  background-color: whitesmoke;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+@media screen and (max-width: 650px) {
+  #inner-container{
+    transform: scale(0.8);
+  }
+}
+@media screen and (max-width: 300px) {
+  main{
+    width: 66vh;
+  }
+}
+
+.number{
+  background-color:#555454;
+  margin: 0.5px;
+  cursor: pointer;
+}
+.sign,.Exsign{
+  background-color: #686f72;
+  margin: 0.5px;
+  cursor: pointer;
+}
+.Ac{
+  background-color: #ca3b3b;
+  margin: 0.5px;
+  cursor: pointer;
+}
+.equal{
+  background-color: #175075f8;
+  margin: 0.5px;
+  cursor: pointer;
+}
+.number:hover{
+  border: 2px solid #b3b1b1;
+}
+.sign:hover,.Exsign:hover{
+  border: 2px solid #b3b1b1;
+}
+.Ac:hover{
+  border: 2px solid #b3b1b1;
+}
+.equal:hover{
+  border: 2px solid #b3b1b1;
+}
       </style>
-      <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
-    <title>Document</title>
-    
+  <title>Calculator</title>
 </head>
-<body class="bg-slate-400 uppercase flex flex-col justify-center items-center">
-    <h1 class="font-extrabold text-[max(2rem,4vmax)]">Calculator</h1>
-    <div class="container" id="container">
-      
+<body>
+  <main class="bg-[whitesmoke] h-[100vh] flex justify-center items-center flex-col">
+    <div id="inner-container">
+      <section class="p-[0.3rem] bottom-2 outline outline-2 outline-zinc-400 w-[21rem] mx-3 bg-black flex flex-col">
+        <input id="input1" type='text' class='text-right text-[1rem] pr-2 outline-none text-white bg-black border-black' readOnly />
+        <input id="input2" type='text' class='text-right text-[1.4rem] pr-2 outline-none text-white bg-black border-black' readOnly />
+        <section class="text-white text-center auto-rows-[4.1rem] grid grid-cols-4">
+          <button id="Ac" value="clear" class="Ac place-content-center">AC</button>
+          <button id="plusAndMinus" value="sign"  class="Exsign place-content-center" >+/-</button>
+          <button id="percent" value="percent" class="Exsign place-content-center" >%</button>
+          <button id="divide" value="/" class="sign place-content-center">/</button>
+          <button  value="7"  class="number place-content-center">7</button>
+          <button value="8"  class="number place-content-center" >8</button>
+          <button value="9" class="number place-content-center" >9</button>
+          <button value="x" id="multiply" class="sign place-content-center" >x</button>
+          <button value="4"  class="number place-content-center" >4</button>
+          <button value="5" class="number place-content-center" >5</button>
+          <button value="6" class="number place-content-center" >6</button>
+          <button value="-"  id="minus" class="sign place-content-center" >-</button>
+          <button value="1" class="number place-content-center" >1</button>
+          <button value="2" class="number place-content-center" >2</button>
+          <button value="3" class="number place-content-center" >3</button>
+          <button value="+" id="plus" class="sign place-content-center" >+</button>
+          <button value="0" class="number place-content-center col-start-1 col-end-3">0</button>
+          <button value="." class="number place-content-center" >.</button>
+          <button value="="  id="equal" class="equal place-content-center">=</button>
+        </section>
+      </section>
+      <div class='text-center pt-3'>Designed and Coded By <br /> <strong>Teaz</strong></div>
     </div>
-    <script src="src/script.js"></script>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
